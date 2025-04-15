@@ -106,6 +106,7 @@ ej 8
 SELECT first_name FROM actor/*otra manera*/
 ORDER BY first_name DESC limit 10
 
+
 /*manera selecionada*/
 SELECT COUNT(a.actor_id) AS cant_actor, a.first_name FROM actor a
 inner join film_actor fa ON a.actor_id = fa.actor_id
@@ -114,8 +115,8 @@ GROUP BY a.actor_id
 ORDER BY cant_actor DESC LIMIT 10
 
 count(cuenta la cantidad)
-ej 9
 
+ ej 9 
 SELECT  count (i.film_id) AS cant_pelis, first_name ,last_name ,a.address,c.city,co.country
 FROM staff s
 INNER JOIN store st
@@ -132,3 +133,90 @@ GROUP BY st.store_id
 
 /*Dia 15/4/2025*/
 ej 10
+
+SELECT count(i.film_id) AS cant_pelis , a.address as direccion, c.city, co.country
+FROM film f
+INNER JOIN inventory i
+ON f.film_id = i.film_id
+INNER JOIN store st
+ON i.store_id = st.store_id
+INNER JOIN address a
+ON st.address_id = a.address_id
+INNER JOIN city c
+ON a.city_id = c.city_id
+INNER JOIN country co
+ON c.country_id = co.country_id
+GROUP BY st.store_id
+
+ej 11 
+SELECT avg(r.rental_id)
+FROM film f
+INNER JOIN inventory i
+ON f.film_id = i.film_id
+INNER JOIN rental  r
+ON i.inventory_id = r.inventory_id
+
+ej 12
+SELECT 
+r.rental_date AS fecha_alquiler,
+r.return_date AS fecha_devolucion,
+SUM (rental_duration * rental_rate),
+f.rental_rate AS costo_total
+FROM rental r
+INNER JOIN inventory i
+ON r.inventory_id = i.inventory_id
+INNER JOIN film f
+ON i.film_id = f.film_id
+
+
+WHERE f.title = 'ALABAMA DEVIL'
+ORDER BY r.rental_date DESC;
+
+EJ 13
+SELECT 
+     f.title AS nombre_pelicula,
+     f.length AS duracion_minutos,
+     c.name AS categoria
+
+FROM film f
+INNER JOIN film_category fc
+ON f.film_id = fc.film_id
+INNER JOIN category c
+ON fc.category_id = c.category_id
+ORDER BY f.length DESC;
+EJ 14
+/*FALTA TERMINAR */
+SELECT film_actor AS 
+
+FROM film f
+INNER JOIN film_actor fa
+ON f.actor_id = fa.actor_id
+INNER JOIN actor a
+ON fa.actor_id = a.actor_id
+WHERE title like 'W'
+GROUP BY film_id 
+HAVING suma > 5
+
+FALTA TERMINAR 
+14
+15
+16
+17
+18
+19
+20
+
+/*T E M A 
+            N U E V O
+INSERT INTO actor(actor_id,first_name,last_name,last_update)/*insertamos en lista actor(puede ser otra lista) nuestro datos para q aparezca  */
+VALUES(201,"sol","perez","2023-12-4 8:40:29")
+
+update actor  /*modifica tu nombre lo cambia por el q quierad */
+set first_name = "Fede",last_name = "villace"/*nombre nuevo*/
+where first_name = "perez"/*nombre q vamos a cambiar */
+
+DELETE  FROM actor /*nos aparece la tabla actual si hacemos esto*/
+
+WHERE actor_id = "201" /*entramos a la columna actor_id */
+ 
+ */
