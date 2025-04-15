@@ -129,3 +129,6 @@ ON a.city_id = c.city_id
 INNER JOIN country co
 ON c.country_id = co.country_id
 GROUP BY st.store_id
+
+/*Dia 15/4/2025*/
+ej 10
