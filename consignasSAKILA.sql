@@ -149,7 +149,7 @@ ON c.country_id = co.country_id
 GROUP BY st.store_id
 
 ej 11 
-SELECT avg(r.rental_id)
+SELECT avg(r.rental_id) --avg()promedio
 FROM film f
 INNER JOIN inventory i
 ON f.film_id = i.film_id
@@ -184,27 +184,78 @@ ON f.film_id = fc.film_id
 INNER JOIN category c
 ON fc.category_id = c.category_id
 ORDER BY f.length DESC;
+
 EJ 14
-/*FALTA TERMINAR */
-SELECT film_actor AS 
+SELECT count(a.actor_id) as actores, f.title 
+FROM film f
+INNER JOIN film_actor fa
+ON f.film_id = fa.film_id
+INNER JOIN actor a
+ON fa.actor_id = a.actor_id
+WHERE title like 'W%'
+GROUP BY f.film_id 
+HAVING actores >=5
+ORDER BY actores ASC
+--group by divide
+EJ 15
+SELECT sum(p.amount) as pagosTotales,first_name, last_name
+FROM customer c
+INNER JOIN payment p
+ON c.customer_id = p.customer_id
+GROUP BY c.customer_id
+ORDER BY cliente ASC
+
+EJ 16
+SELECT 
+     f.title AS nombre_pelicula,
+     f.length AS duracion_minutos,
+	 first_name
 
 FROM film f
 INNER JOIN film_actor fa
-ON f.actor_id = fa.actor_id
+ON f.film_id = fa.film_id
 INNER JOIN actor a
 ON fa.actor_id = a.actor_id
-WHERE title like 'W'
-GROUP BY film_id 
-HAVING suma > 5
+GROUP BY a.first_name
+HAVING  f.length <= 60
+ORDER BY f.length ASC;
 
-FALTA TERMINAR 
-14
-15
-16
-17
-18
-19
-20
+EJ 17
+SELECT 
+    r.rental_id ,
+    last_name AS apellido_delCliente,
+    a.address AS dirrecion,
+	co.country AS pais,
+	ci.city AS ciudad 
+
+FROM customer c
+INNER JOIN address a
+ON c.address_id = a.address_id
+INNER JOIN city  ci
+ON a.city_id = ci.city_id
+INNER JOIN country co
+ON ci.country_id = co.country_id
+INNER JOIN rental r
+ON c.customer_id = r.customer_id
+INNER JOIN payment p
+ON r.customer_id = p.customer_id
+ORDER BY r.rental_id ASC;
+
+EJ 18
+INSERT into actor (actor_id,first_name, last_name, last_update) 
+VALUES (202,"gabriel", "fabian", "2025-05-13 16:27:10")
+
+EJ 19
+INSERT into actor (actor_id,first_name, last_name, last_update) 
+VALUES (203,"gabriel", "fabian", "2025-05-13 16:27:10"),(204,"joel","agustin","2025-05-13 16:40:10")
+
+EJ 20
+UPDATE actor first_name = gabriel, last_name = fabian 
+WHERE first_name = brenda AND last_name = torres
+
+21 falta terminar 
+DELETE from actor
+WHERE
 
 /*T E M A 
             N U E V O
@@ -220,3 +271,9 @@ DELETE  FROM actor /*nos aparece la tabla actual si hacemos esto*/
 WHERE actor_id = "201" /*entramos a la columna actor_id */
  
  */
+
+ /*DESC de Z a A
+ ASC DE A a Z
+ '%w'si esta adelante de la letra significa que la ultima letra tiene q ser con w
+ 'w% 'si esta atras de la letra significa q la primera letra tiene q ser con w
+ '%w%' si esta en los dos lados de la letra significa q la letra del medio tiene q ser w*/
