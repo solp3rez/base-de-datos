@@ -184,6 +184,7 @@ ON f.film_id = fc.film_id
 INNER JOIN category c
 ON fc.category_id = c.category_id
 ORDER BY f.length DESC;
+--lenght duracion 
 
 EJ 14
 SELECT count(a.actor_id) as actores, f.title 
@@ -196,6 +197,7 @@ WHERE title like 'W%'
 GROUP BY f.film_id 
 HAVING actores >=5
 ORDER BY actores ASC
+--order by ordena 
 --group by divide
 EJ 15
 SELECT sum(p.amount) as pagosTotales,first_name, last_name
