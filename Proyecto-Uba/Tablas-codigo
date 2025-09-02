@@ -1,0 +1,98 @@
+CREATE TABLE Materias (
+   Materias_id INT NOT NULL AUTO_INCREMENT,
+   Matematica_id INT NOT NULL,
+   Ingles_id INT NOT NULL,
+   Quimica_id INT NOT NULL,
+   ApoyoM_id INT NOT NULL,
+   PRIMARY KEY (Materias_id),
+   FOREIGN KEY (Matematica_id) REFERENCES Matematica(Matematica_id),
+   FOREIGN KEY (Ingles_id) REFERENCES Ingles(Ingles_id),
+   FOREIGN KEY (Quimica_id) REFERENCES Quimica(Quimica_id),
+   FOREIGN KEY (ApoyoM_id) REFERENCES ApoyoM(ApoyoM_id)
+) 
+
+
+CREATE TABLE Matematica (
+   Matematica_id INT NOT NULL AUTO_INCREMENT,
+   Apuntes VARCHAR(60) NOT NULL,
+   Profesor VARCHAR(60) NOT NULL,
+   PRIMARY KEY (Matematica_id)
+) 
+
+
+CREATE TABLE Ingles (
+   Ingles_id INT NOT NULL AUTO_INCREMENT,
+   Apuntes VARCHAR(60) NOT NULL,
+   Profesor VARCHAR(60) NOT NULL,
+   PRIMARY KEY (Ingles_id)
+) 
+
+
+CREATE TABLE Quimica (
+   Quimica_id INT NOT NULL AUTO_INCREMENT,
+   Apuntes VARCHAR(60) NOT NULL,
+   Profesor VARCHAR(60) NOT NULL,
+   PRIMARY KEY (Quimica_id)
+) 
+
+
+CREATE TABLE ApoyoM (
+   ApoyoM_id INT NOT NULL AUTO_INCREMENT,
+   Apuntes VARCHAR(60) NOT NULL,
+   Profesor VARCHAR(60) NOT NULL,
+   PRIMARY KEY (ApoyoM_id)
+) 
+
+
+CREATE TABLE Taller (
+   Taller_id INT NOT NULL AUTO_INCREMENT,
+   ProgramacionWeb_id INT NOT NULL,
+   AGBD_id INT NOT NULL,
+   AED_id INT NOT NULL,
+   TAP_id INT NOT NULL,
+   DiseñoSoftware_id INT NOT NULL,
+   PRIMARY KEY (Taller_id),
+   FOREIGN KEY (ProgramacionWeb_id) REFERENCES ProgramacionWeb(ProgramacionWeb_id),
+   FOREIGN KEY (AGBD_id) REFERENCES AGBD(AGBD_id),
+   FOREIGN KEY (AED_id) REFERENCES AED(AED_id),
+   FOREIGN KEY (TAP_id) REFERENCES TAP(TAP_id),
+   FOREIGN KEY (DiseñoSoftware_id) REFERENCES DiseñoSoftware(DiseñoSoftware_id)
+)
+
+CREATE TABLE ProgramacionWeb (
+   ProgramacionWeb_id INT NOT NULL AUTO_INCREMENT,
+   Apuntes VARCHAR(60) NOT NULL,
+   Profesor VARCHAR(60) NOT NULL,
+   PRIMARY KEY (ProgramacionWeb_id)
+) 
+
+
+CREATE TABLE AGBD (
+   AGBD_id INT NOT NULL AUTO_INCREMENT,
+   Apuntes VARCHAR(60) NOT NULL,
+   Profesor VARCHAR(60) NOT NULL,
+   PRIMARY KEY (AGBD_id)
+) 
+
+
+CREATE TABLE AED (
+   AED_id INT NOT NULL AUTO_INCREMENT,
+   Apuntes VARCHAR(60) NOT NULL,
+   Profesor VARCHAR(60) NOT NULL,
+   PRIMARY KEY (AED_id)
+) 
+
+CREATE TABLE TAP (
+   TAP_id INT NOT NULL AUTO_INCREMENT,
+   Apuntes VARCHAR(60) NOT NULL,
+   Profesor VARCHAR(60) NOT NULL,
+   PRIMARY KEY (TAP_id)
+) 
+
+
+CREATE TABLE DiseñoSoftware (
+   DiseñoSoftware_id INT NOT NULL AUTO_INCREMENT,
+   Apuntes VARCHAR(60) NOT NULL,
+   Profesor VARCHAR(60) NOT NULL,
+   PRIMARY KEY (DiseñoSoftware_id)
+) 

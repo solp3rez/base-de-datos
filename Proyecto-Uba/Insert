@@ -1,0 +1,80 @@
+/*1*/INSERT INTO Quimica (Apuntes, Profesor)
+VALUES ('Cambios Quimicos', 'Marcela Gleiser');
+
+SELECT * FROM Quimica;
+
+/*2*/INSERT INTO Quimica (Apuntes, Profesor)
+VALUES ('Compuestos Organicos', 'Marcela Gleiser');
+
+SELECT * FROM Quimica;
+
+/*3*/INSERT INTO Quimica (Apuntes, Profesor)
+VALUES ('Cambios Quimicos', 'Marcela Gleiser');
+
+SELECT * FROM Quimica;
+
+/*4*/INSERT INTO Quimica (Apuntes, Profesor)
+VALUES ('Soluciones y acido Base', 'Marcela Gleiser');
+
+SELECT * FROM Quimica;
+
+/*5*/INSERT INTO Quimica (Apuntes, Profesor)
+VALUES ('Uniones quimicas', 'Marcela Gleiser');
+
+SELECT * FROM Quimica;
+
+/*6*/INSERT INTO Quimica (Apuntes, Profesor)
+VALUES ('Atomo Iones y Configuracion Electronica', 'Marcela Gleiser');
+
+SELECT * FROM Quimica;
+
+/* A E D*/
+
+/*1*/INSERT INTO AED (Apuntes,Profesor) VALUES
+('Algoritmo y Estrucutura de Datos 2','Mauricio Uribe ');
+
+
+SELECT * FROM `AED` 
+
+/*1*/INSERT INTO AED (Apuntes,Profesor) VALUES
+('Algoritmo y Estrucutura de Datos 1','Mauricio Uribe ');
+
+
+SELECT * FROM `AED`
+
+INSERT INTO AED (Apuntes,Profesor) VALUES
+('Archicos SCV','Mauricio Uribe ');
+
+SELECT * FROM `AED` 
+
+INSERT INTO AED (Apuntes,Profesor) VALUES
+('Archivos ver0.1','Julian Impelluso'); 
+
+SELECT * FROM `AED` 
+
+INSERT INTO AED (Apuntes,Profesor) VALUES
+ ('Cadena','Julian Impelluso'); 
+
+SELECT * FROM `AED` 
+
+ INSERT INTO AED (Apuntes,Profesor) VALUES 
+('Introduccion a Algoritmo 1 ','Julian Impelluso'); 
+
+SELECT * FROM `AED`
+
+INSERT INTO AED (Apuntes,Profesor) VALUES 
+('Introduccion a AED  ','Julian Impelluso'); 
+
+SELECT * FROM `AED` 
+
+/*Programacion Web*/
+
+INSERT INTO ProgramacionWeb (Apuntes,Profesor) VALUES
+ ('React desde 0','Federico Villace'); 
+
+INSERT INTO ProgramacionWeb (Apuntes,Profesor) VALUES
+ ('JavaScrit','Federico Villace'); 
+
+INSERT INTO ProgramacionWeb (Apuntes,Profesor) VALUES
+ ('Html y Css','Federico Villace'); 
+
