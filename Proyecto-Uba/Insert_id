@@ -1,0 +1,36 @@
+INSERT INTO Taller (Taller_id, ProgramacionWeb_id, AGBD_id, AED_id, TAP_id, DiseñoSoftware_id) 
+VALUES (1, 1, 1, 1, 1, 1); 
+
+SELECT * FROM `Taller`; 
+
+
+INSERT INTO Taller (Taller_id, ProgramacionWeb_id, AGBD_id, AED_id, TAP_id, DiseñoSoftware_id) 
+VALUES (3, 3, 4, 3, 3, NULL); 
+
+INSERT INTO Taller (Taller_id, ProgramacionWeb_id, AGBD_id, AED_id, TAP_id, DiseñoSoftware_id) 
+VALUES (4, NULL, 6, 4, 4, NULL); 
+
+INSERT INTO Taller (Taller_id, ProgramacionWeb_id, AGBD_id, AED_id, TAP_id, DiseñoSoftware_id) 
+VALUES (5, NULL, 7, 5, 5, NULL); 
+
+INSERT INTO Taller (Taller_id, ProgramacionWeb_id, AGBD_id, AED_id, TAP_id, DiseñoSoftware_id) 
+VALUES (6, NULL, 8, 6, 6, NULL); 
+
+INSERT INTO Taller (Taller_id, ProgramacionWeb_id, AGBD_id, AED_id, TAP_id, DiseñoSoftware_id) 
+VALUES (7, NULL, 9, 7, 7, NULL); 
+
+INSERT INTO Taller (Taller_id, ProgramacionWeb_id, AGBD_id, AED_id, TAP_id, DiseñoSoftware_id) 
+VALUES (8, NULL, 10, 8, 8, NULL); 
+
+INSERT INTO Taller (Taller_id, ProgramacionWeb_id, AGBD_id, AED_id, TAP_id, DiseñoSoftware_id) 
+VALUES (9, NULL, 11, NULL, 9, NULL);  
+
+INSERT INTO Taller (Taller_id, ProgramacionWeb_id, AGBD_id, AED_id, TAP_id, DiseñoSoftware_id) 
+VALUES (10, NULL, 12, NULL, NULL, NULL);  
+
+
+
+/*modifique para que no me tire error en null
+ALTER TABLE Taller MODIFY ProgramacionWeb_id INT NULL; 
+verificamos con 
+DESCRIBE Taller;*/ 
